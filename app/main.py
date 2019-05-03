@@ -8,9 +8,9 @@ from .util import random_text, StopWatch
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument('-m', '--inmemory', action='store_true')
-parser.add_argument('-i', '--iterations', type=int, default=10)
-parser.add_argument('-r', '--records', type=int, default=1000000)
+parser.add_argument('-m', '--inmemory', action='store_true', help='use sqlite in-memory mode. if not, file-mode.')
+parser.add_argument('-i', '--iterations', type=int, default=10, help='number of iteration of measurements. default: 10')
+parser.add_argument('-r', '--records', type=int, default=1000000, help='number of records. default: 1,000,000')
 args = parser.parse_args()
 
 app = Flask(__name__)
